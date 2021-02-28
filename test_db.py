@@ -74,7 +74,7 @@ class Page:
     def match_data_send_and_parsing(send_data, parsing_data):
         changes_data_send = tuple(set(send_data) - set(parsing_data))
         changes_data_parsing = tuple(set(parsing_data) - set(send_data))
-        if changes_data_send and changes_data_parsing:
+        if changes_data_send or changes_data_parsing:
             print('Добавленные данные в таблицу НЕ совпадают с данными из БД!')
         else:
             print('Добавленные данные в таблицу совпадают с данными из БД')
