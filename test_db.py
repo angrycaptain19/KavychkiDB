@@ -108,10 +108,10 @@ class Page:
         table = self.driver.find_element(*element)
         tr = table.find_elements(*(By.TAG_NAME, 'tr'))
         head_elements = tr[0].find_elements(*(By.TAG_NAME, 'th'))
-        heads = (head_elements.text for head_elements in head_elements)
+        heads = [head_elements.text for head_elements in head_elements]
         data = []
         print('Спарсенные данные из таблицы:')
-        print(heads)
+        print(tuple(heads[:3]))
         for el in tr[1:]:
             td = el.find_elements(*(By.TAG_NAME, 'td'))
             data_tuple = tuple([td.text for td in td[:3] if td.text])
