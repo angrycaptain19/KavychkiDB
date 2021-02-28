@@ -4,7 +4,10 @@
 
 Инструкция для запуска в PyCharm на Windows
 ввести в терминале PyCharm
+```
 pip install -r requirements.txt
+```
+
 
 В корне проекта лежит файл chromedriver.exe необходимый для запуска программы, так же необходим браузер Google Chrome
 версии не ниже 88.0.4324.150
