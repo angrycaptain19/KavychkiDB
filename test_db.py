@@ -41,7 +41,7 @@ class DB:
         conn = sqlite3.connect(name_db)
         cur = conn.cursor()
         all_rows = cur.execute("SELECT * FROM shopping;")
-        data_tuple = tuple(value for value in all_rows)
+        data_tuple = tuple(all_rows)
         conn.commit()
         print('Данные из БД:')
         for row in data_tuple:
@@ -114,7 +114,7 @@ class Page:
         print(tuple(heads[:3]))
         for el in tr[1:]:
             td = el.find_elements(*(By.TAG_NAME, 'td'))
-            data_tuple = tuple([td.text for td in td[:3] if td.text])
+            data_tuple = tuple(td.text for td in td[:3] if td.text)
             data.append(data_tuple)
             print(data_tuple)
         print()
